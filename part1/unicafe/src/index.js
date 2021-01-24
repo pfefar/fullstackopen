@@ -11,6 +11,15 @@ const Button = ({ method, title }) => {
 }
 
 const Statistics = ({ good, neutral, bad, total }) => {
+
+  if (good === 0 && bad === 0 && neutral === 0) {
+    return (
+      <div>
+        No Feedback given
+      </div>
+    )
+  }
+
   return (
     <div>
       <h2>Statistics</h2>
