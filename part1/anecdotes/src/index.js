@@ -11,13 +11,19 @@ const App = ({ anecdotes }) => {
     copy[idx] += 1
     return copy
   }
+  let i = arr.indexOf(Math.max(...arr));
 
   return (
     <div>
+      <h2>Anecdote of the day</h2>
       <button onClick={() => setArr(help(arr, selected))}>Vote</button>
       <button onClick={() => setSelected(Math.floor(Math.random() * 6))}>Next anecdote</button>
       <p>{anecdotes[selected]}</p>
       <p>has {arr[selected]} votes</p>
+      <h2>Anecdote with most votes: </h2>
+      <p>{anecdotes[i]}</p>
+      <p>has {arr[i]} votes</p>
+
     </div>
   )
 }
