@@ -2,7 +2,10 @@ import React from 'react';
 
 
 const Total = ({ course }) => {
-  const sum = course.parts[0].exercises + course.parts[1].exercises + course.parts[2].exercises
+  let sum = 0
+  for (const el of course.parts) {
+    sum += el.exercises
+  }
   return (
     <p>Number of exercises {sum}</p>
   )
